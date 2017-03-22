@@ -1,0 +1,6 @@
+choco install SetEnv -y -f -source https://www.myget.org/F/atgames/api/v2
+Import-Module C:\ProgramData\chocolatey\lib\setenv\tools\PlayServerInit.psm1
+Import-Module C:\ProgramData\chocolatey\lib\setenv\tools\ChangeDesktopIconSize.psm1
+
+# Bootstrap Chef-client
+Initialize-Node

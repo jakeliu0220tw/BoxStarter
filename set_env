@@ -1,0 +1,27 @@
+choco install SetEnv -y -f -source https://www.myget.org/F/atgames/api/v2
+Import-Module C:\ProgramData\chocolatey\lib\setenv\tools\PlayServerInit.psm1
+Import-Module C:\ProgramData\chocolatey\lib\setenv\tools\ChangeDesktopIconSize.psm1
+
+# Boxstarter Module
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions
+Disable-MicrosoftUpdate
+Disable-UAC
+Set-TaskbarOptions -Size Large -UnLock -Dock Bottom
+Disable-WindowsErrorReporting
+
+# PlayServerInit Module
+Disable-FireWall
+Hide-Taskbar
+Hide-DesktopIcons
+Restart-explorer
+Set-SmartScreenSettingsStatus -State Off
+Disable-Screensaver
+Disable-SleepMode
+Disable-WindowsUpdate
+Sync-Time
+Disable-LogOff
+Disable-ErrorReport
+
+# ChangeDesktopIconSize Module
+write-host "Set-DesktopColorBlack"
+Set-OSCDesktopColor -R 0 -G 0 -B 0
